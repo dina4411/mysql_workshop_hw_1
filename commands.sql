@@ -1,0 +1,1 @@
+SELECT * FROM country WHERE Name LIKE "Rus%";
