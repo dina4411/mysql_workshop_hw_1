@@ -19,9 +19,7 @@ SELECT * FROM city WHERE CountryCode IN ("AUS", "RUS");
 -- 10. узнать все города, которые НЕ находятся в Китае из таблицы city
 SELECT * FROM city WHERE NOT CountryCode = "CHN";
 -- 11. узнать данные, где язык = Английский или код страны НЕ “CAN” и процент говорящих НИ меньше 50 из таблицы countrylanguage
--- составила 2 запроса, не понимаю, в чем разница. Как по мне, они оба подходят под условия, хотя дают разный результат:
-SELECT * FROM countrylanguage WHERE Language = "English" OR (CountryCode != "CAN" AND Percentage > "50");
-SELECT * FROM countrylanguage WHERE Language = "English" OR NOT (CountryCode = "CAN" AND Percentage < "50");
+SELECT * FROM countrylanguage WHERE (Language = "English" OR CountryCode != "CAN") AND Percentage > "50";
 -- 12. получить данные только определенных языков: Русский и Английский из таблицы countrylanguage 
 SELECT * FROM countrylanguage WHERE Language IN ("English", "Russian");
 -- 13. получить все города, населения которых от 1 000 000 до 5 000 000 из таблицы city 
